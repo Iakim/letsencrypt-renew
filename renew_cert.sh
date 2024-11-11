@@ -24,7 +24,7 @@ future_timestamp=$(($current_timestamp + 604800))
 # Compare the dates
 # Vergleichen Sie die Daten
 if [ $expiry_timestamp -le $future_timestamp ]; then
-    certbot renew --quiet --deploy-hook \"systemctl reload nginx\"
+    certbot renew -d yourdomain.com --quiet --deploy-hook \"systemctl reload nginx\"
 else
     exit 0
 fi
